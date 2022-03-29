@@ -7,4 +7,5 @@ describe('GitRepo App Tests', () => {
   it.todo('API 403 limit exceeded handling');
   it.todo('API 404 error handling');
   it.todo('View port test');
+  //change favicon.ico
 })
