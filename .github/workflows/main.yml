@@ -60,7 +60,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: cypress-testing
-    options: --user root
     env:
       NEXT_PUBLIC_BASE_PATH: /2022_Dcard_Intern
 
@@ -77,9 +76,6 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: deploy
-      
-      - name: Add .nojekyll file
-        run: touch out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
