@@ -57,13 +57,13 @@ sudo docker kill {CONTAINER ID}
 # 網站的routing:
 pages
 ├── _app.tsx
-├── index.tsx 					# 首頁, 包含搜尋欄和列出高星數的repositories
+├── index.tsx	# 首頁, 包含搜尋欄和列出高星數的repositories
 └── users
     └── [username]
         ├── repos
         │   └── [repo]
         │       └── index.tsx	# 單一 repository 頁面,	包含特定repository的資料和github連結
-        └── repos.tsx			# repository 列表, 包含使用者相關資料和repository列表
+        └── repos.tsx	# repository 列表, 包含使用者相關資料和repository列表
 ```
 
 ### Components
