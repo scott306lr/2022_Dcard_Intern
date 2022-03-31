@@ -43,7 +43,7 @@ jobs:
   cypress-testing:
     timeout-minutes: 5
     runs-on: ubuntu-latest
-    needs: install
+    needs: install_and_build
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -65,7 +65,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
-    needs: cypress-test
+    needs: cypress-testing
     steps:
       - name: Checkout
         uses: actions/checkout@v3
