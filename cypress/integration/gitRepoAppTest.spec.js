@@ -54,10 +54,11 @@ describe('GitRepo App Tests', () => {
   it('View port visibility test', () => {
     cy.visit('/users/scott306lr/repos/2022_Dcard_Intern');
 
-    const sizes = [(1920, 1080), (1280, 720), (1024, 600), (768, 480), (375, 320), (320, 240)];
+    const sizes = [[1920, 1080], [1280, 720], [1024, 600], [768, 480], [375, 320], [320, 240]];
     const phones = ['macbook-16', 'iphone-x', 'iphone-6', 'iphone-5'];
-    sizes.forEach((w, h) => {
-      cy.viewport(w, h)
+    sizes.forEach(size => {
+      const [width, height] = size;
+      cy.viewport(width, height)
       cy.get('h1[id=full_name]').should('be.visible');
       cy.get('p[id=description]').should('be.visible');
       cy.get('span[id=star-count] > p').should('be.visible');

@@ -24,13 +24,13 @@ const RepoInfo: NextPage = () => {
       <main className={`${status === "ok" ? "flex-center" : "hidden"} flex-col h-full text-gray-300`}>
         <div className='flex-center flex-col w-full max-w-[40rem] px-5'>
           <div className='flex-center w-full'>
-            <p className='text-xl'> Current Selected Repository: </p>
+            <p className='inline truncate text-xl'> Current Selected Repository: </p>
             <div className='flex flex-grow items-center justify-end'>
               <span 
-                className='flex-center text-gray-500 cursor-pointer hover:text-white'
+                className='flex justify-center text-gray-500 cursor-pointer hover:text-white'
                 onClick={() => router.push(`/users/${userInfo?.login}/repos`)}
               >
-                <ArrowNarrowLeftIcon className='w-6 mx-2' />
+                <ArrowNarrowLeftIcon className='w-6 h-6' />
                 <img 
                   className='w-10 h-10 border-1 border-gray border-hov_color rounded-full'
                   src={`${userInfo?.avatar_url}`} 
@@ -47,7 +47,7 @@ const RepoInfo: NextPage = () => {
           >
             <div className='flex w-full space-x-4 py-2 truncate'>
               <h1 
-                className='text-2xl'
+                className='text-2xl inline truncate'
                 id='full_name'
               >
                 {userRepo?.full_name}
