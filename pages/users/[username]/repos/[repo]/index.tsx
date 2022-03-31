@@ -13,7 +13,7 @@ const RepoInfo: NextPage = () => {
   const [ userRepo, status ] = useGetRepoInfo();
   
   return (
-    <div className="h-screen w-screen bg-bg_color">
+    <div className="flex flex-col h-screen w-screen bg-bg_color">
       <Head>
         <title>GitRepo - Repo Page</title>
         <link rel="icon" href="/favicon.ico" />

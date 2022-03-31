@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const [ starRepos, hasMore, nextPage ] = useGetStarRepos();
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center py-2 bg-bg_color">
+    <div className="flex flex-col h-screen items-center justify-center py-2 bg-bg_color">
       <Head>
         <title>GitRepo - Home Page</title>
         <link rel="icon" href="/favicon.ico" />
