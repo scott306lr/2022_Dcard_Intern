@@ -18,10 +18,17 @@ jobs:
       - run: node -p 'os.cpus()'
       - run: yarn build
 
-      - name: Save build folder
+      - name: Save .next folder
         uses: actions/upload-artifact@v3
         with:
-          name: build
+          name: .next
+          if-no-files-found: error
+          path: .next
+        
+        name: Save out folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: out
           if-no-files-found: error
           path: out
 
