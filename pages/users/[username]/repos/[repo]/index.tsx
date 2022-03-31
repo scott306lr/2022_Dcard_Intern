@@ -44,6 +44,8 @@ const RepoInfo: NextPage = () => {
               border rounded-lg cursor-pointer hover:bg-hov_color'
             id='repoInfo'
             href={userRepo?.html_url}
+            target="_blank" 
+            rel="noreferrer noopener"
           >
             <div className='flex w-full space-x-4 py-2 truncate'>
               <h1 
