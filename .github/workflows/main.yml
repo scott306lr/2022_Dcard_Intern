@@ -31,14 +31,6 @@ jobs:
           name: .next
           if-no-files-found: error
           path: .next
-        
-      - name: Save out folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: out
-          if-no-files-found: error
-          path: out
-
 
   cypress-testing:
     timeout-minutes: 5
@@ -68,7 +60,7 @@ jobs:
     needs: cypress-testing
     env:
       NEXT_PUBLIC_BASE_PATH: /2022_Dcard_Intern
-      
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -80,6 +72,8 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
+      
+      - run: touch out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
