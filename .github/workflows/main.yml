@@ -17,11 +17,13 @@ jobs:
       - run: yarn cypress info
       - run: node -p 'os.cpus()'
 
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Yarn Install
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install 
 
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Yarn Build
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build  
 
@@ -65,13 +67,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Yarn Install
+        uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install 
 
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Yarn Build
+        uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: build
+          cmd: deploy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
