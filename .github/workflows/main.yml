@@ -4,6 +4,9 @@ jobs:
   install_and_build:
     runs-on: ubuntu-latest
     container: cypress/browsers:node14.17.0-chrome88-ff89
+    env:
+      NEXT_PUBLIC_BASE_PATH: /YOUR_REPOSITORY
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v3
