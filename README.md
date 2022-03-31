@@ -5,11 +5,13 @@
 
 # 如何啟動
 
-### 網站連結:
+### 已部屬網站連結:
 
 Vercel: https://2022-dcard-intern.vercel.app/
 
 Github Pages(不支援dynamic routing): https://scott306lr.github.io/2022_Dcard_Intern/
+
+
 
 ### Deploy directly on localhost :
 
@@ -72,24 +74,46 @@ pages
 
 * ReposList.tsx:
   * 用於程列 repositories , 可以配合下方實做的 hooks 達到 infinite scrolling 的功能
+  
+    
+  
 * SearchBar.tsx :
   * 搜尋欄，submit 時導向 /users/[username]/repos 頁面
+  
+    
+  
 * useGetUserRepos.ts:
   * 獲取 github API "GET /users/{username}" 回傳的資料
+  
+    
 
 ### Hooks
 
 * useGetRepoInfo.ts :
   * 獲取 github API "GET /repos/{owner}/{repo}" 回傳的資料和狀態碼
+  
   * 用於取得特定repository資料，並且能根據狀態碼處理例外狀態
+  
+    
+  
 * useGetUserInfo.ts :
   * 獲取 github API "GET /users/{username}" 回傳的資料和狀態碼
+  
   * 用於取得特定使用者資料，並且能根據狀態碼處理例外狀態
+  
+    
+  
 * useGetUserRepos.ts:
   * 獲取 github API "GET /users/{username}" 回傳的資料
+  
   * 用於取得使用者的repositories，並且能支援 infinite scrolling
+  
   * 提供 nextPage() , 每次呼叫會額外抓10筆資料
+  
   * 當並無更多資料時，hasMore === false 
+  
+    
+  
 * useGetStarRepos.ts:
   * 獲取 github API "GET /search/repositories" 回傳的資料
   * 用於取得使用者的repositories，並且能支援 infinite scrolling
@@ -104,9 +128,13 @@ pages
 
 * 將從 API 獲取的資料暫存在瀏覽器的 Session Storage, 以減少重新抓取資料的次數
 
+  
+
 ### 例外處理
 
 * 透過 Custom hooks 回傳的狀態碼，正確處理例外狀況 (ex. 403, 404)
+
+  
 
 ### CI/CD
 
@@ -117,6 +145,8 @@ pages
 
 * Github Actions
   * 自動化測試並部屬的流程 
+  
+    
 
 ### 響應式設計
 
