@@ -3,11 +3,12 @@
 
 
 
-## 如何啟動
+# 如何啟動
 
-### 網站連結 (by Vercel, Github Pages 不支援dynamic routing):
+### 網站連結:
 
-https://2022-dcard-intern.vercel.app/
+Vercel: https://2022-dcard-intern.vercel.app/
+Github Pages: https://scott306lr.github.io/2022_Dcard_Intern/ (不支援dynamic routing)
 
 ### Deploy directly on localhost :
 
@@ -45,7 +46,7 @@ sudo docker kill {CONTAINER ID}
 
 
 
-## 架構設計
+# 架構設計
 
 此網站使用 Next.js 和 Tailwind 撰寫而成, 透過 Yarn 2 管理 Dependencies .
 
@@ -96,9 +97,9 @@ pages
 
 
 
-## 額外補充
+# 額外補充
 
-### 暫存資料
+### 暫存查詢資料
 
 * 將從 API 獲取的資料暫存在瀏覽器的 Session Storage, 以減少重新抓取資料的次數
 
@@ -114,7 +115,7 @@ pages
   * 不同 Viewport 正確顯示測試
 
 * Github Actions
-  * 自動化測試並部屬至 Github Pages 的流程 
+  * 自動化測試並部屬的流程 
 
 ### 響應式設計
 
