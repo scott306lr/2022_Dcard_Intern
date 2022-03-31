@@ -9,7 +9,7 @@
 
 Vercel: https://2022-dcard-intern.vercel.app/
 
-Github Pages: https://scott306lr.github.io/2022_Dcard_Intern/ (不支援dynamic routing)
+Github Pages(不支援dynamic routing): https://scott306lr.github.io/2022_Dcard_Intern/
 
 ### Deploy directly on localhost :
 
