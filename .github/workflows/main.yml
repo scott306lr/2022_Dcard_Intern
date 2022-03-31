@@ -1,4 +1,4 @@
-name: Cypress test
+name: GitRepo Test and Deploy
 on: [push]
 jobs:
   install:
@@ -62,3 +62,16 @@ jobs:
           wait-on-timeout: 120
           browser: chrome
           command-prefix: 'yarn'
+  
+  deploy:
+    - name: Download the build folders
+      uses: actions/download-artifact@v3
+      with:
+        name: out
+        path: out
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages
+        folder: out
