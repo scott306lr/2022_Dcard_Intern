@@ -5,7 +5,11 @@
 
 ## 如何啟動
 
-#### Deploy directly on localhost :
+### 網站連結 (by Vercel, Github Pages 不支援dynamic routing):
+
+https://2022-dcard-intern.vercel.app/
+
+### Deploy directly on localhost :
 
 只需 repo clone 下來之後執行:
 
@@ -15,7 +19,7 @@ yarn build
 yarn start
 ```
 
-#### Deploy using Docker:
+### Deploy using Docker:
 
 build container:
 
@@ -47,7 +51,7 @@ sudo docker kill {CONTAINER ID}
 
 以下列出程式的主要架構:
 
-#### Pages
+### Pages
 
 ```bash
 # 網站的routing:
@@ -62,7 +66,7 @@ pages
         └── repos.tsx			# repository 列表, 包含使用者相關資料和repository列表
 ```
 
-#### Components
+### Components
 
 * ReposList.tsx:
   * 用於程列 repositories , 可以配合下方實做的 hooks 達到 infinite scrolling 的功能
@@ -71,7 +75,7 @@ pages
 * useGetUserRepos.ts:
   * 獲取 github API "GET /users/{username}" 回傳的資料
 
-#### Hooks
+### Hooks
 
 * useGetRepoInfo.ts :
   * 獲取 github API "GET /repos/{owner}/{repo}" 回傳的資料和狀態碼
@@ -94,15 +98,15 @@ pages
 
 ## 額外補充
 
-#### 暫存資料
+### 暫存資料
 
 * 將從 API 獲取的資料暫存在瀏覽器的 Session Storage, 以減少重新抓取資料的次數
 
-#### 例外處理
+### 例外處理
 
 * 透過 Custom hooks 回傳的狀態碼，正確處理例外狀況 (ex. 403, 404)
 
-#### CI/CD
+### CI/CD
 
 * Cypress E2E Testing
   * 包含所有實作基本要求的測試
@@ -112,11 +116,9 @@ pages
 * Github Actions
   * 自動化測試並部屬至 Github Pages 的流程 
 
-#### 響應式設計
+### 響應式設計
 
-* 針對不同 Viewport, 提供適當的版面配置
-
-* 
+* 針對不同 Viewport, 提供適當的版面配置 
 
 
 
