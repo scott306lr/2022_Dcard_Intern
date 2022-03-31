@@ -44,8 +44,8 @@ jobs:
       - name: Download the build folders
         uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: .next
+          path: .next
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
