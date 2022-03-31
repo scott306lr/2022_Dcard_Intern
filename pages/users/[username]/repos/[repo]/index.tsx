@@ -15,14 +15,14 @@ const RepoInfo: NextPage = () => {
   return (
     <div className="h-screen w-screen bg-bg_color">
       <Head>
-        <title>Repo</title>
+        <title>GitRepo - Repo Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Topbar/>
 
       <main className={`${status === "ok" ? "flex-center" : "hidden"} flex-col h-full text-gray-300`}>
-        <div className='flex-center flex-col max-w-[40rem] px-5'>
+        <div className='flex-center flex-col w-full max-w-[40rem] px-5'>
           <div className='flex-center w-full'>
             <p className='text-xl'> Current Selected Repository: </p>
             <div className='flex flex-grow items-center justify-end'>
@@ -39,15 +39,24 @@ const RepoInfo: NextPage = () => {
               </span>
             </div>
           </div>
-          <div 
+          <a
             className='flex-center flex-col items-start w-full m-5 px-5 py-12 space-y-2
               border rounded-lg cursor-pointer hover:bg-hov_color'
-            onClick={()=>{router.push(`${userRepo?.html_url}`)}}
+            id='repoInfo'
+            href={userRepo?.html_url}
           >
             <div className='flex w-full space-x-4 py-2 truncate'>
-              <h1 className='text-2xl'>{userRepo?.full_name}</h1>
-              <span className='flex-center text-xs px-2 border border-gray-300 rounded-full'>{userRepo?.private ? "Private" : "Public"}</span>
-              <span className='flex-center flex-grow justify-end'>
+              <h1 
+                className='text-2xl'
+                id='full_name'
+              >
+                {userRepo?.full_name}
+              </h1>
+              <span className='flex-center hidden sm:flex text-xs px-2 border border-gray-300 rounded-full'>{userRepo?.private ? "Private" : "Public"}</span>
+              <span 
+                className='flex-center flex-grow justify-end'
+                id='star-count'
+              >
                 <StarIcon className='w-5 h-5'/>
                 <p>{userRepo?.stargazers_count}</p>
               </span>
@@ -55,19 +64,19 @@ const RepoInfo: NextPage = () => {
             
             <hr className='w-full border-t-[1px] border-gray-300'/>
             {userRepo?.description 
-              ? <p className='flex text-md'> {userRepo?.description} </p>
-              : <p className='text-md inline truncate text-gray-500'> No description provided... </p>
+              ? <p id='description' className='flex text-md'> {userRepo?.description} </p>
+              : <p id='description' className='flex text-md text-gray-500'> No description provided... </p>
             }
             
-          </div>
+          </a>
         </div>
       </main>
 
-      <h1 className={`h-full w-full ${status === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="404" className={`h-full w-full ${status === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         {`User "${username}" doesn't match repository "${repo}" !`}
       </h1>
 
-      <h1 className={`h-full w-full ${status === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="403" className={`h-full w-full ${status === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         API rate limit exceeded !
       </h1>
     </div>

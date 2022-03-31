@@ -18,7 +18,7 @@ const Repos: NextPage = () => {
   return (
     <div className="flex flex-col h-screen w-screen bg-bg_color">
       <Head>
-        <title>Repo</title>
+        <title>GitRepo - Repos Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -31,10 +31,9 @@ const Repos: NextPage = () => {
               <img 
                 src={`${userInfo?.avatar_url}`}
                 className='flex w-4/5 max-w-[14rem] md:max-w-[24rem] rounded-full border-2 border-hov_color cursor-pointer hover:shadow-lg'
-                
               />
             </Link>
-            <h1 className=' '> {userInfo?.name} </h1>
+            <header className='text-xl'> {userInfo?.name} </header>
           </div>
           <div className='flex flex-col md:flex-grow w-4/5 max-w-[30rem] p-5'>
             <h3>{`Public Repositories ${(userInfo) ? "("+userInfo?.public_repos+")" : ""}:`}</h3>
@@ -50,11 +49,11 @@ const Repos: NextPage = () => {
         </div>
       </main>
 
-      <h1 className={`h-full w-full ${status === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="404" className={`h-full w-full ${status === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         {`User "${username}" Not Found!`}
       </h1>
 
-      <h1 className={`h-full w-full ${status === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="403" className={`h-full w-full ${status === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         API rate limit exceeded !
       </h1>
     </div>

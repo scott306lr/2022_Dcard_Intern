@@ -3,8 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start",
-    "cypress": "cypress open"
+    "start": "next start"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",

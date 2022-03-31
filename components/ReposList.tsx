@@ -35,11 +35,19 @@ export default function ReposList({data, height, nextPage, hasMore}: Props) {
                 <div className="card">
                   <Link href={`/users/${repoInfo?.owner?.login}/repos/${repoInfo?.name}`}>
                     <div className='flex p-2'>
-                      <h1 className='flex-grow text-left inline truncate'>{repoInfo?.name}</h1>
-                      <div className='flex items-center'>
+                      <h1 
+                        className='flex-grow text-left inline truncate'
+                        id='repo-name'
+                      >
+                        {repoInfo?.name}
+                      </h1>
+                      <span 
+                        className='flex items-center'
+                        id='star-count'
+                      >
                         <StarIcon className='w-5 h-5'/>
                         <p>{repoInfo?.stargazers_count}</p>
-                      </div>
+                      </span>
                     </div>
                   </Link>
                 </div>

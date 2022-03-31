@@ -28,8 +28,8 @@ export const useGetUserRepos = (): [listUserReposResponse, boolean, () => void] 
         });
         
       if (data?.length){
-        setHasMore(true);
         setUserRepos(userRepos.concat(data));
+        setHasMore(true);
       }else {
         setHasMore(false);
       }

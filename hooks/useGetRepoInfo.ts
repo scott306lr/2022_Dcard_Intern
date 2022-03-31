@@ -4,8 +4,6 @@ import axios, { AxiosResponse, AxiosError } from 'axios';
 import { Endpoints } from '@octokit/types';
 import { isEmpty } from 'lodash';
 
-
-
 type listRepoInfoResponse =
   Endpoints["GET /repos/{owner}/{repo}"]["response"]["data"];
 

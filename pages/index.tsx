@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-center py-2 bg-bg_color">
       <Head>
-        <title>Create Next App</title>
+        <title>GitRepo - Home Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

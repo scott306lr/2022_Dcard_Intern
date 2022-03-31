@@ -24,8 +24,8 @@ export const useGetStarRepos = (): [listStarReposResponse, boolean, () => void] 
       });
       
     if (data?.length){
-      setHasMore(true);
       setStarRepos(starRepos.concat(data));
+      setHasMore(true);
     }else {
       setHasMore(false);
     }
