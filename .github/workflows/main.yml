@@ -72,11 +72,10 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
-      
-      - run: touch out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
+          nojekyll: true
           branch: gh-pages
           folder: out
