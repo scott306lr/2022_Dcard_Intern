@@ -27,7 +27,7 @@ const RepoInfo: NextPage = () => {
             <p className='inline truncate text-xl'> Current Selected Repository: </p>
             <div className='flex flex-grow items-center justify-end'>
               <span 
-                className='flex justify-center text-gray-500 cursor-pointer hover:text-white'
+                className='flex-center text-gray-500 cursor-pointer hover:text-white'
                 onClick={() => router.push(`/users/${userInfo?.login}/repos`)}
               >
                 <ArrowNarrowLeftIcon className='w-6 h-6' />
