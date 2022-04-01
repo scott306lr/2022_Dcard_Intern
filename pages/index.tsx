@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col h-full w-full items-start justify-start text-center p-20">
         
-        <div className='flex-center flex-col sm:flex-row  w-full px-10 py-5'>
+        <div className='flex-center flex-col sm:flex-row  w-full py-5'>
           <div className='flex h-full items-center text-white bg-bg_color rounded-l-2xl pr-5'> 
             <HomeIcon className='h-14 w-14'/>
             <h1 className='text-5xl'>GitRepo</h1>
