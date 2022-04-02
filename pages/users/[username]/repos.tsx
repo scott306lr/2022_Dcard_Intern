@@ -35,15 +35,16 @@ const Repos: NextPage = () => {
             </Link>
             <header className='text-xl'> {userInfo?.name} </header>
           </div>
-          <div className='flex flex-col md:flex-grow w-4/5 max-w-[30rem] py-5'>
+          <div className='flex flex-col md:flex-grow h-1/2 w-4/5 max-w-[30rem] p-5'>
             <h3>{`Public Repositories ${(userInfo) ? "("+userInfo?.public_repos+")" : ""}:`}</h3>
             
-            <ReposList
-              data={userRepos}
-              height={280}
-              nextPage={nextPage}
-              hasMore={hasMore}
-            />
+            <div className='flex-context flex-grow h-52 w-full py-5'>
+              <ReposList
+                data={userRepos}
+                nextPage={nextPage}
+                hasMore={hasMore}
+              />
+            </div>
           </div>
               
         </div>
