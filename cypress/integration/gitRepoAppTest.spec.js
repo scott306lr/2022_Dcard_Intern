@@ -26,7 +26,7 @@ describe('GitRepo App Tests', () => {
   it('repository list - initials 10 repos, loads 10 more when scrolls to end', () => {
     cy.visit('/users/Dcard/repos');
     cy.get('ul').find('li').should('have.length', 10);
-    cy.get('div[class^="infinite-scroll-component "]').scrollTo('bottom');
+    cy.get('ul').scrollTo('bottom');
     cy.get('ul').find('li').should('have.length', 20);
   });
 
