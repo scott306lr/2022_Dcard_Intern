@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col h-full w-full items-start justify-start text-center p-20">
+      <main className="flex flex-col h-full w-full items-start justify-start text-center p-5">
         
         <div className='flex-center flex-col sm:flex-row  w-full py-5'>
           <div className='flex h-full items-center text-white bg-bg_color rounded-l-2xl pr-5'> 
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         </div>
 
         <hr className='flex w-full border-t-2 border-gray-300'/>
-        <div className='flex flex-col w-full p-5 items-start justify-start text-white'> 
+        <div className='flex flex-col w-full items-start justify-start text-white'> 
           <h1 className='text-4xl pt-2 inline truncate'>OR...</h1>
           <h1 className='text-2xl  truncate hidden sm:inline'>below are some popular repositories:</h1>
           <div className='py-5 w-full'>
