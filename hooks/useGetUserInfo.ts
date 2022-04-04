@@ -11,7 +11,7 @@ export const useGetUserInfo = (): [listUserInfoResponse, String] => {
   const router = useRouter();
   const { username } = router.query;
   const [ userInfo, setUserInfo ] = useState<listUserInfoResponse>(Object.create(null));
-  const [ status, setStatus ] = useState<String>("404");
+  const [ status, setStatus ] = useState<String>("error");
 
   useEffect(() => {
     const fetchUserInfo = async () => {

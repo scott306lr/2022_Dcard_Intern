@@ -11,9 +11,19 @@ type Props = {
   data: listRepoInfoResponse 
   nextPage: () => void
   hasMore: boolean
+  status: String
 }
 
-export default function ReposList({data, nextPage, hasMore}: Props) {
+export default function ReposList({data, nextPage, hasMore, status}: Props) {
+  const endMessage = () => {
+    if (status === 'ok') {
+      return <h4 className='flex-center text-gray-500'>You reached the end!</h4>
+    } else if (status === '403') {
+      return <h4 className='flex-center text-gray-500'>API Limit Exceeded! Try Again Later!</h4>
+    } else {
+      return <h4 className='flex-center text-gray-500'>Error!</h4>
+    }
+  }
   return (
     <ul 
       id="scrollableUl"
@@ -25,7 +35,7 @@ export default function ReposList({data, nextPage, hasMore}: Props) {
         next={nextPage}
         hasMore={hasMore}
         loader={<h4 className='flex-center text-gray-500'>Loading...</h4>}
-        endMessage={<h4 className='flex-center text-gray-500'>You reached the end!</h4>}
+        endMessage={endMessage()}
         scrollableTarget="scrollableUl"
       >
         {

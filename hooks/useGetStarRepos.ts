@@ -5,10 +5,11 @@ import { Endpoints } from '@octokit/types';
 type listStarReposResponse =
   Endpoints["GET /users/{username}/repos"]["response"]["data"];
 
-export const useGetStarRepos = (): [listStarReposResponse, boolean, () => void] => {
+export const useGetStarRepos = (): [listStarReposResponse, () => void, boolean, String] => {
   const [ hasMore, setHasMore ] = useState(true);
   const [ pageNum, setPageNum ] = useState(1);
   const [ starRepos, setStarRepos ] = useState<listStarReposResponse>([]);
+  const [ status, setStatus ] = useState<String>("error");
 
   const fetchRepos = async () => {
     const url = `https://api.github.com/search/repositories?q=stars:%3E15000&per_page=10&page=${pageNum}`;
@@ -17,8 +18,10 @@ export const useGetStarRepos = (): [listStarReposResponse, boolean, () => void] 
       .catch((res:AxiosError) => {
         if (res.response?.status === 403) {
           console.log("API rate limit exceeded");
+          setStatus("403");
         }else {
           console.log("API error");
+          setStatus("error");
         }
         return;
       });
@@ -26,6 +29,7 @@ export const useGetStarRepos = (): [listStarReposResponse, boolean, () => void] 
     if (data?.length){
       setStarRepos(starRepos.concat(data));
       setHasMore(true);
+      setStatus("ok");
     }else {
       setHasMore(false);
     }
@@ -39,5 +43,5 @@ export const useGetStarRepos = (): [listStarReposResponse, boolean, () => void] 
     fetchRepos();
   }, [pageNum])
 
-  return [starRepos, hasMore, nextPage];
+  return [starRepos, nextPage, hasMore, status];
 }

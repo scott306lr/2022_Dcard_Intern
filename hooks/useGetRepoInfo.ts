@@ -11,7 +11,7 @@ export const useGetRepoInfo = (): [listRepoInfoResponse, String]=> {
   const router = useRouter();
   const { username, repo } = router.query;
   const [ userRepo, setUserRepo ] = useState<listRepoInfoResponse>(Object.create(null));
-  const [ status, setStatus ] = useState<String>("404");
+  const [ status, setStatus ] = useState<String>("error");
 
   useEffect(() => {
     const fetchRepoInfo = async () => {

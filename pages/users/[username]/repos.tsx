@@ -12,8 +12,8 @@ import ReposList from '../../../components/ReposList';
 const Repos: NextPage = () => {
   const router = useRouter();
   const { username } = router.query;
-  const [ userInfo, status ] = useGetUserInfo();
-  const [ userRepos, hasMore, nextPage ] = useGetUserRepos();
+  const [ userInfo, uStatus ] = useGetUserInfo();
+  const [ userRepos, nextPage, hasMore, rStatus ] = useGetUserRepos();
 
   return (
     <div className="flex flex-col h-screen w-screen bg-bg_color">
@@ -24,7 +24,7 @@ const Repos: NextPage = () => {
 
       <Topbar/>
 
-      <main className={`${status === "ok" ? "flex-center" : "hidden"} items-stretch h-full w-full p-2 bg-bg_color`}>
+      <main className={`${uStatus === "ok" ? "flex-center" : "hidden"} items-stretch h-full w-full p-2 bg-bg_color`}>
         <div className='flex-center flex-col md:flex-row w-5/6 rounded-lg bg-white m-4'>
           <div className='flex flex-col items-center space-y-4'>
             <Link href={`${userInfo?.html_url}`}>
@@ -43,6 +43,7 @@ const Repos: NextPage = () => {
                 data={userRepos}
                 nextPage={nextPage}
                 hasMore={hasMore}
+                status={rStatus}
               />
             </div>
           </div>
@@ -50,11 +51,11 @@ const Repos: NextPage = () => {
         </div>
       </main>
 
-      <h1 id="404" className={`h-full w-full ${status === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="404" className={`h-full w-full ${rStatus === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         {`User "${username}" Not Found!`}
       </h1>
 
-      <h1 id="403" className={`h-full w-full ${status === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="403" className={`h-full w-full ${rStatus === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         API rate limit exceeded !
       </h1>
     </div>

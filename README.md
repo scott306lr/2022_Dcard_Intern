@@ -87,9 +87,9 @@ pages
     
   
 * useGetUserRepos.ts:
-  * 獲取 github API "GET /users/{username}" 回傳的資料
+  * 獲取 github API "GET /users/{username}" 回傳的資料和狀態碼
   
-  * 用於取得使用者的repositories，並且能支援 infinite scrolling
+  * 用於取得使用者的repositories，並且能支援 infinite scrolling 及根據狀態碼處理例外狀態
   
   * 提供 nextPage() , 每次呼叫會額外抓10筆資料
   
@@ -98,8 +98,8 @@ pages
     
   
 * useGetStarRepos.ts:
-  * 獲取 github API "GET /search/repositories" 回傳的資料
-  * 用於取得使用者的repositories，並且能支援 infinite scrolling
+  * 獲取 github API "GET /search/repositories" 回傳的資料和狀態碼
+  * 用於取得使用者的repositories，並且能支援 infinite scrolling 及根據狀態碼處理例外狀態
   * 提供 nextPage() , 每次呼叫會額外抓10筆資料
   * 當並無更多資料時，hasMore === false 
 

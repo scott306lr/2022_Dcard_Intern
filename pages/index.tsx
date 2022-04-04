@@ -9,7 +9,7 @@ import SearchBar from '../components/SearchBar'
 import { useGetStarRepos } from '../hooks/useGetStarRepos'
 
 const Home: NextPage = () => {
-  const [ starRepos, hasMore, nextPage ] = useGetStarRepos();
+  const [ starRepos, nextPage, hasMore, status ] = useGetStarRepos();
 
   return (
     <div className="flex flex-col h-screen items-center justify-center py-2 bg-bg_color">
@@ -39,6 +39,7 @@ const Home: NextPage = () => {
               data={starRepos}
               nextPage={nextPage}
               hasMore={hasMore}
+              status={status}
             />
           </div>
         </div>

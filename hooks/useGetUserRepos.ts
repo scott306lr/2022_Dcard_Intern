@@ -6,12 +6,13 @@ import { Endpoints } from '@octokit/types';
 type listUserReposResponse =
   Endpoints["GET /users/{username}/repos"]["response"]["data"];
 
-export const useGetUserRepos = (): [listUserReposResponse, boolean, () => void] => {
+export const useGetUserRepos = (): [listStarReposResponse, () => void, boolean, String] => {
   const router = useRouter();
   const { username } = router.query;
   const [ hasMore, setHasMore ] = useState(true);
   const [ pageNum, setPageNum ] = useState(1);
   const [ userRepos, setUserRepos ] = useState<listUserReposResponse>([]);
+  const [ status, setStatus ] = useState<String>("error");
 
   const fetchRepos = async () => {
     if (username){
@@ -21,8 +22,10 @@ export const useGetUserRepos = (): [listUserReposResponse, boolean, () => void] 
         .catch((res:AxiosError) => {
           if (res.response?.status === 403) {
             console.log("API rate limit exceeded");
+            setStatus("403");
           }else {
             console.log("API error");
+            setStatus("error");
           }
           return;
         });
@@ -30,6 +33,7 @@ export const useGetUserRepos = (): [listUserReposResponse, boolean, () => void] 
       if (data?.length){
         setUserRepos(userRepos.concat(data));
         setHasMore(true);
+        setStatus("ok");
       }else {
         setHasMore(false);
       }
@@ -49,5 +53,5 @@ export const useGetUserRepos = (): [listUserReposResponse, boolean, () => void] 
     fetchRepos();
   }, [pageNum])
 
-  return [userRepos, hasMore, nextPage];
+  return [userRepos, nextPage, hasMore, status];
 }
