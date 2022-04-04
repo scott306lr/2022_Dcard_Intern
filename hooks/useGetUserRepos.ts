@@ -6,7 +6,7 @@ import { Endpoints } from '@octokit/types';
 type listUserReposResponse =
   Endpoints["GET /users/{username}/repos"]["response"]["data"];
 
-export const useGetUserRepos = (): [listStarReposResponse, () => void, boolean, String] => {
+export const useGetUserRepos = (): [listUserReposResponse, () => void, boolean, String] => {
   const router = useRouter();
   const { username } = router.query;
   const [ hasMore, setHasMore ] = useState(true);
