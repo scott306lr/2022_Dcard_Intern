@@ -17,15 +17,15 @@ export default function ReposList({data, nextPage, hasMore}: Props) {
   return (
     <ul 
       id="scrollableUl"
-      className='grid h-full w-full scrollbar-hide overflow-auto border border-hov_color text-gray-800 rounded-md bg-white'
+      className='h-full w-full scrollbar-hide overflow-scroll border border-hov_color text-gray-800 rounded-md bg-white'
     >
       <InfiniteScroll
         dataLength={data.length}
         scrollThreshold={0.8}
         next={nextPage}
         hasMore={hasMore}
-        loader={<h4 className='flex-context text-gray-500'>Loading...</h4>}
-        endMessage={<h4 className='flex-context text-gray-500'>You reached the end!</h4>}
+        loader={<h4 className='flex-center text-gray-500'>Loading...</h4>}
+        endMessage={<h4 className='flex-center text-gray-500'>You reached the end!</h4>}
         scrollableTarget="scrollableUl"
       >
         {

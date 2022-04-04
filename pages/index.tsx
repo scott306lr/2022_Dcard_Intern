@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         <div className='flex flex-col h-3/5 w-full items-start justify-start text-white'> 
           <h1 className='text-4xl pt-2 flex truncate'>OR...</h1>
           <h1 className='text-2xl truncate hidden sm:flex'>below are some popular repositories:</h1>
-          <div className='flex-context flex-grow h-52 w-full py-5'>
+          <div className='flex-center flex-grow h-52 w-full py-5'>
             <ReposList
               data={starRepos}
               nextPage={nextPage}

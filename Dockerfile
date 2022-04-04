@@ -17,6 +17,7 @@ FROM node:alpine AS runner
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
+RUN yarn global add pm2
 
 ENV NODE_ENV production
 WORKDIR /app
@@ -49,4 +50,5 @@ EXPOSE 3000
 # Uncomment the following line in case you want to disable telemetry.
 ENV NEXT_TELEMETRY_DISABLED 1
 
-CMD ["yarn", "start"]
+#CMD ["yarn", "start"]
+CMD ["pm2-runtime", "start", "yarn" ,"--interpreter", "sh", "--name", "client", "--", "start"]

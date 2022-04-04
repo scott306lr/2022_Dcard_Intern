@@ -25,26 +25,9 @@ yarn start
 
 ### Deploy using Docker:
 
-build container:
-
-```
-docker build -t nextjs-docker .
-```
-
-run container :
-
-```
-sudo docker run -d -p 3000:3000 nextjs-docker
-```
-
-kill container:
-
 ```bash
-# to get CONTAINER ID:
-sudo docker ps
-
-# kill container
-sudo docker kill {CONTAINER ID}
+docker-compose build
+docker-compose up 	# deployed on <server-ip>:80
 ```
 
 
