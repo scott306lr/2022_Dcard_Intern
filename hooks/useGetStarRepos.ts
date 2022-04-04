@@ -9,7 +9,7 @@ export const useGetStarRepos = (): [listStarReposResponse, () => void, boolean, 
   const [ hasMore, setHasMore ] = useState(true);
   const [ pageNum, setPageNum ] = useState(1);
   const [ starRepos, setStarRepos ] = useState<listStarReposResponse>([]);
-  const [ status, setStatus ] = useState<String>("error");
+  const [ status, setStatus ] = useState<String>("loading");
 
   const fetchRepos = async () => {
     const url = `https://api.github.com/search/repositories?q=stars:%3E15000&per_page=10&page=${pageNum}`;

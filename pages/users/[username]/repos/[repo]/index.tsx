@@ -74,6 +74,10 @@ const RepoInfo: NextPage = () => {
         </div>
       </main>
 
+      <h1 id="loading" className={`h-full w-full ${status === "loading" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+        <Spinner size={20}/>
+      </h1>
+
       <h1 id="404" className={`h-full w-full ${status === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         {`User "${username}" doesn't match repository "${repo}" !`}
       </h1>

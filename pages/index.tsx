@@ -6,26 +6,27 @@ import Link from 'next/link'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import ReposList from '../components/ReposList'
 import SearchBar from '../components/SearchBar'
+import Spinner from '../components/Spinner'
 import { useGetStarRepos } from '../hooks/useGetStarRepos'
 
 const Home: NextPage = () => {
   const [ starRepos, nextPage, hasMore, status ] = useGetStarRepos();
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center py-2 bg-bg_color">
+    <div className="flex-center flex-col h-screen py-2 bg-bg_color">
       <Head>
         <title>GitRepo - Home Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col h-full w-full items-start justify-start text-center p-5">
+      <main className="flex-center flex-col h-full w-full p-5">
         
         <div className='flex-center flex-col sm:flex-row  w-full py-5'>
           <div className='flex h-full items-center text-white bg-bg_color rounded-l-2xl pr-5'> 
             <HomeIcon className='h-14 w-14'/>
             <h1 className='text-5xl'>GitRepo</h1>
           </div>
-          <div className='flex h-20 flex-grow items-center justify-center'>
+          <div className='flex-center h-20 flex-grow'>
             <SearchBar/>
           </div>
         </div>
@@ -43,7 +44,6 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-        
       </main>
     </div>
   )

@@ -8,6 +8,7 @@ import { useGetUserRepos } from '../../../hooks/useGetUserRepos'
 import { StarIcon } from '@heroicons/react/outline';
 import Topbar from '../../../components/Topbar';
 import ReposList from '../../../components/ReposList';
+import Spinner from '../../../components/Spinner';
 
 const Repos: NextPage = () => {
   const router = useRouter();
@@ -50,12 +51,16 @@ const Repos: NextPage = () => {
               
         </div>
       </main>
+    
+      <h1 id="loading" className={`h-full w-full ${uStatus === "loading" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+        <Spinner size={20}/>
+      </h1>
 
-      <h1 id="404" className={`h-full w-full ${rStatus === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="404" className={`h-full w-full ${uStatus === "error" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         {`User "${username}" Not Found!`}
       </h1>
 
-      <h1 id="403" className={`h-full w-full ${rStatus === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
+      <h1 id="403" className={`h-full w-full ${uStatus === "403" ? "flex" : "hidden"} items-center justify-center text-2xl text-gray-300`}>
         API rate limit exceeded !
       </h1>
     </div>

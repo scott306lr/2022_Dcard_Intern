@@ -12,7 +12,7 @@ export const useGetUserRepos = (): [listUserReposResponse, () => void, boolean, 
   const [ hasMore, setHasMore ] = useState(true);
   const [ pageNum, setPageNum ] = useState(1);
   const [ userRepos, setUserRepos ] = useState<listUserReposResponse>([]);
-  const [ status, setStatus ] = useState<String>("error");
+  const [ status, setStatus ] = useState<String>("loading");
 
   const fetchRepos = async () => {
     if (username){
