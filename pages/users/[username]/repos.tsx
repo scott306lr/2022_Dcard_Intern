@@ -1,11 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import InfiniteScroll from "react-infinite-scroll-component";
 import Link from 'next/link'
 import { useGetUserInfo } from '../../../hooks/useGetUserInfo'
 import { useGetUserRepos } from '../../../hooks/useGetUserRepos'
-import { StarIcon } from '@heroicons/react/outline';
 import Topbar from '../../../components/Topbar';
 import ReposList from '../../../components/ReposList';
 import Spinner from '../../../components/Spinner';

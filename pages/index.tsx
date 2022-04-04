@@ -1,12 +1,8 @@
 import { HomeIcon, SearchIcon, StarIcon } from '@heroicons/react/outline'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import ReposList from '../components/ReposList'
 import SearchBar from '../components/SearchBar'
-import Spinner from '../components/Spinner'
 import { useGetStarRepos } from '../hooks/useGetStarRepos'
 
 const Home: NextPage = () => {
