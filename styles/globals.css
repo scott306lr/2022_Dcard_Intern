@@ -4,9 +4,9 @@
 
 @layer components {
   .card {
-    @apply  bg-white hover:bg-gray-200 text-center cursor-pointer transition-colors duration-100 ease-out p-2;
+    @apply bg-white hover:bg-gray-200 text-center cursor-pointer transition-colors duration-100 ease-out p-2;
   }
-  .flex-center{
-    @apply  flex justify-center items-center;
+  .flex-center {
+    @apply flex justify-center items-center;
   }
 }
