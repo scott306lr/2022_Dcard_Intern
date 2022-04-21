@@ -1,17 +1,17 @@
-import { ArrowNarrowLeftIcon, StarIcon } from '@heroicons/react/outline'
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import Spinner from '../../../../../components/Spinner'
-import Topbar from '../../../../../components/Topbar'
-import { useGetRepoInfo } from '../../../../../hooks/useGetRepoInfo'
-import { useGetUserInfo } from '../../../../../hooks/useGetUserInfo'
+import { ArrowNarrowLeftIcon, StarIcon } from '@heroicons/react/outline';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Spinner from '../../../../../components/Spinner';
+import Topbar from '../../../../../components/Topbar';
+import { useGetRepoInfo } from '../../../../../hooks/useGetRepoInfo';
+import { useGetUserInfo } from '../../../../../hooks/useGetUserInfo';
 
 const RepoInfo: NextPage = () => {
-  const router = useRouter()
-  const { username, repo } = router.query
-  const [userInfo, _] = useGetUserInfo()
-  const [userRepo, status] = useGetRepoInfo()
+  const router = useRouter();
+  const { username, repo } = router.query;
+  const [userInfo, _] = useGetUserInfo();
+  const [userRepo, status] = useGetRepoInfo();
 
   return (
     <div className="flex flex-col h-screen w-screen bg-bg_color">
@@ -114,7 +114,7 @@ const RepoInfo: NextPage = () => {
         API rate limit exceeded !
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default RepoInfo
+export default RepoInfo;

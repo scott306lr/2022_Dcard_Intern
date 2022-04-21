@@ -1,19 +1,19 @@
-import { SearchIcon } from '@heroicons/react/outline'
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import { SearchIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
-type Props = {}
+type Props = {};
 
 export default function SearchBar({}: Props) {
-  const router = useRouter()
+  const router = useRouter();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     if (inputName) {
-      router.push(`/users/${inputName}/repos`)
-      setInputName('')
+      router.push(`/users/${inputName}/repos`);
+      setInputName('');
     }
-  }
-  const [inputName, setInputName] = useState('')
+  };
+  const [inputName, setInputName] = useState('');
 
   return (
     <form
@@ -27,7 +27,7 @@ export default function SearchBar({}: Props) {
         name="search"
         placeholder="Enter Github Username..."
         onChange={(e) => {
-          setInputName(e.target.value)
+          setInputName(e.target.value);
         }}
         value={inputName}
       />
@@ -39,5 +39,5 @@ export default function SearchBar({}: Props) {
         <SearchIcon className="h-6 text-gray-600" />
       </button>
     </form>
-  )
+  );
 }

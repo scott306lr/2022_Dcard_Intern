@@ -1,33 +1,35 @@
-import { StarIcon } from '@heroicons/react/outline'
-import { Endpoints } from '@octokit/types'
-import Link from 'next/link'
-import React from 'react'
-import InfiniteScroll from 'react-infinite-scroll-component'
+import { StarIcon } from '@heroicons/react/outline';
+import { Endpoints } from '@octokit/types';
+import Link from 'next/link';
+import React from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 type listRepoInfoResponse =
-  Endpoints['GET /users/{username}/repos']['response']['data']
+  Endpoints['GET /users/{username}/repos']['response']['data'];
 
 type Props = {
-  data: listRepoInfoResponse
-  nextPage: () => void
-  hasMore: boolean
-  status: String
-}
+  data: listRepoInfoResponse;
+  nextPage: () => void;
+  hasMore: boolean;
+  status: String;
+};
 
 export default function ReposList({ data, nextPage, hasMore, status }: Props) {
   const endMessage = () => {
     if (status === 'ok') {
-      return <h4 className="flex-center text-gray-500">You reached the end!</h4>
+      return (
+        <h4 className="flex-center text-gray-500">You reached the end!</h4>
+      );
     } else if (status === '403') {
       return (
         <h4 className="flex-center text-gray-500">
           API Limit Exceeded! Try Again Later!
         </h4>
-      )
+      );
     } else {
-      return <h4 className="flex-center text-gray-500">Error!</h4>
+      return <h4 className="flex-center text-gray-500">Error!</h4>;
     }
-  }
+  };
   return (
     <ul
       id="scrollableUl"
@@ -64,9 +66,9 @@ export default function ReposList({ data, nextPage, hasMore, status }: Props) {
                 </Link>
               </div>
             </li>
-          )
+          );
         })}
       </InfiniteScroll>
     </ul>
-  )
+  );
 }

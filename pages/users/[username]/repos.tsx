@@ -1,18 +1,18 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import { useGetUserInfo } from '../../../hooks/useGetUserInfo'
-import { useGetUserRepos } from '../../../hooks/useGetUserRepos'
-import Topbar from '../../../components/Topbar'
-import ReposList from '../../../components/ReposList'
-import Spinner from '../../../components/Spinner'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useGetUserInfo } from '../../../hooks/useGetUserInfo';
+import { useGetUserRepos } from '../../../hooks/useGetUserRepos';
+import Topbar from '../../../components/Topbar';
+import ReposList from '../../../components/ReposList';
+import Spinner from '../../../components/Spinner';
 
 const Repos: NextPage = () => {
-  const router = useRouter()
-  const { username } = router.query
-  const [userInfo, uStatus] = useGetUserInfo()
-  const [userRepos, nextPage, hasMore, rStatus] = useGetUserRepos()
+  const router = useRouter();
+  const { username } = router.query;
+  const [userInfo, uStatus] = useGetUserInfo();
+  const [userRepos, nextPage, hasMore, rStatus] = useGetUserRepos();
 
   return (
     <div className="flex flex-col h-screen w-screen bg-bg_color">
@@ -82,7 +82,7 @@ const Repos: NextPage = () => {
         API rate limit exceeded !
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default Repos
+export default Repos;

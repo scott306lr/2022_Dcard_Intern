@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  size: number
-}
+  size: number;
+};
 
 export default function Spinner({ size }: Props) {
   return (
@@ -22,5 +22,5 @@ export default function Spinner({ size }: Props) {
         fill="currentFill"
       />
     </svg>
-  )
+  );
 }

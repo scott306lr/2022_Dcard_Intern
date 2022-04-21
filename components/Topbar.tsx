@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
-import { HomeIcon, SearchIcon } from '@heroicons/react/outline'
-import Link from 'next/link'
-import SearchBar from './SearchBar'
+import React, { useRef, useState } from 'react';
+import { HomeIcon, SearchIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
+import SearchBar from './SearchBar';
 
 export default function Topbar() {
   return (
@@ -17,5 +17,5 @@ export default function Topbar() {
         <SearchBar />
       </span>
     </span>
-  )
+  );
 }

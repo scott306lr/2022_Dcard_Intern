@@ -1,12 +1,12 @@
-import { HomeIcon, SearchIcon, StarIcon } from '@heroicons/react/outline'
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import ReposList from '../components/ReposList'
-import SearchBar from '../components/SearchBar'
-import { useGetStarRepos } from '../hooks/useGetStarRepos'
+import { HomeIcon, SearchIcon, StarIcon } from '@heroicons/react/outline';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import ReposList from '../components/ReposList';
+import SearchBar from '../components/SearchBar';
+import { useGetStarRepos } from '../hooks/useGetStarRepos';
 
 const Home: NextPage = () => {
-  const [starRepos, nextPage, hasMore, status] = useGetStarRepos()
+  const [starRepos, nextPage, hasMore, status] = useGetStarRepos();
 
   return (
     <div className="flex-center flex-col h-screen py-2 bg-bg_color">
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
