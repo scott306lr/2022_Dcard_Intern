@@ -49,11 +49,21 @@ export const useGetUserRepos = (): [
   const nextPage = () => {
     setPageNum(pageNum + 1);
   };
+  
+  useEffect(() => {
+    setUserRepos([]);
+    setPageNum(1);
+    fetchRepos();
+  }, [username]);
 
   useEffect(() => {
-    fetchRepos();
-    console.log("fetchRepos");
+    if (pageNum > 1) {
+      fetchRepos();
+    }
   }, [pageNum]);
 
   return [userRepos, nextPage, hasMore, status];
 };
+
+// reset page number when username changes
+// fetch repos on nextPage
