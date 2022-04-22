@@ -47,7 +47,7 @@ export const useGetUserRepos = (): [
   };
 
   const nextPage = () => {
-    setPageNum(pageNum + 1);
+    setPageNum((prev) => prev + 1);
   };
   
   useEffect(() => {

@@ -42,7 +42,7 @@ export const useGetStarRepos = (): [
   };
 
   const nextPage = () => {
-    setPageNum(pageNum + 1);
+    setPageNum((prev) => prev + 1);
   };
 
   useEffect(() => {
