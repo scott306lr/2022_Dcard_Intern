@@ -47,10 +47,10 @@ export default function ReposList({ data, nextPage, hasMore, status }: Props) {
         {data.map((repoInfo, idx) => {
           return (
             <li key={idx}>
-              <div className="card border border-gray-300">
-                <Link
+              <Link
                   href={`/users/${repoInfo?.owner?.login}/repos/${repoInfo?.name}`}
-                >
+              >
+                <div className="card border border-gray-300">
                   <div className="flex">
                     <h1
                       className="flex-grow text-left inline truncate"
@@ -63,8 +63,8 @@ export default function ReposList({ data, nextPage, hasMore, status }: Props) {
                       <p>{repoInfo?.stargazers_count}</p>
                     </span>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </li>
           );
         })}
