@@ -1,14 +1,14 @@
-# 2022_Dcard_Intern
+# GitRepo
 
-2022 Web Frontend Intern Homework
+Homework of 2022 Dcard Frontend
 
 # 如何啟動
 
 ### 已部屬網站連結:
 
-Vercel: https://2022-dcard-intern.vercel.app/
+Vercel: https://gitrepo.vercel.app/
 
-Github Pages(不支援 dynamic routing): https://scott306lr.github.io/2022_Dcard_Intern/
+Github Pages(不支援 dynamic routing): https://scott306lr.github.io/GitRepo/
 
 ### Deploy directly on localhost :
 
