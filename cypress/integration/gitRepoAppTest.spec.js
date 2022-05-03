@@ -39,11 +39,11 @@ describe('GitRepo App Tests', () => {
   });
 
   it('single repository page - includes "full_name", "description", "stargazers_count"', () => {
-    cy.visit('/users/scott306lr/repos/2022_Dcard_Intern');
+    cy.visit('/users/scott306lr/repos/GitRepo');
     //repository.full_name
     cy.get('h1[id=full_name]').should(
       'include.text',
-      'scott306lr/2022_Dcard_Intern'
+      'scott306lr/GitRepo'
     );
     //repository.description
     cy.get('p[id=description]').should(
@@ -55,8 +55,8 @@ describe('GitRepo App Tests', () => {
   });
 
   it('single repository page - contains href to githubpage', () => {
-    cy.visit('/users/scott306lr/repos/2022_Dcard_Intern');
-    cy.get('a[href="https://github.com/scott306lr/2022_Dcard_Intern"]').should(
+    cy.visit('/users/scott306lr/repos/GitRepo');
+    cy.get('a[href="https://github.com/scott306lr/GitRepo"]').should(
       'exist'
     );
   });
