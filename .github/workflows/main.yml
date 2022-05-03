@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: cypress-testing
     env:
-      NEXT_PUBLIC_BASE_PATH: /2022_Dcard_Intern
+      NEXT_PUBLIC_BASE_PATH: /GitRepo
 
     steps:
       - name: Checkout
